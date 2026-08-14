@@ -139,6 +139,32 @@
     background:linear-gradient(165deg, #4a3c2e, #362a1e 45%, #241a11);
     box-shadow:0 2px 0 #150f09, 0 3px 6px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 0 0 1px rgba(201,162,75,0.3);
     cursor:default;
+    position:relative;
+    overflow:hidden;
+    animation:creditGlow 2.4s ease-in-out infinite;
+  }
+
+  .credit-btn::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-60%;
+    width:40%;
+    height:100%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform:skewX(-20deg);
+    animation:creditShine 2.4s ease-in-out infinite;
+  }
+
+  @keyframes creditGlow{
+    0%, 100%{ box-shadow:0 2px 0 #150f09, 0 3px 6px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 0 0 1px rgba(201,162,75,0.3), 0 0 0 rgba(232,205,133,0); }
+    50%{ box-shadow:0 2px 0 #150f09, 0 3px 10px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 1px rgba(232,205,133,0.7), 0 0 12px rgba(232,205,133,0.65); }
+  }
+
+  @keyframes creditShine{
+    0%{ left:-60%; }
+    45%{ left:120%; }
+    100%{ left:120%; }
   }
 
   .console{
